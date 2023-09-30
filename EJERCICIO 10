@@ -1,0 +1,29 @@
+def obtener_fecha_YYYY_MM_DD(fecha):
+    meses = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    ]
+
+    # Separa la fecha en componentes (día, mes, año)
+    partes = fecha.split()
+    dia = mes = anio = None
+
+    if len(partes) == 3:
+        mes = meses.index(partes[0]) + 1
+        dia = int(partes[1].rstrip(','))
+        anio = int(partes[2])
+    elif '/' in fecha:
+        mes, dia, anio = map(int, fecha.split('/'))
+    else:
+        return "Formato de fecha no válido."
+
+    return f"{anio:04d}-{mes:02d}-{dia:02d}"
+
+# Solicita al usuario ingresar una fecha
+fecha = input("Ingrese una fecha (en formato MM/DD/AAAA o Mes Día, AAAA): ")
+
+# Llama a la función obtener_fecha_YYYY_MM_DD para obtener la fecha en formato AAAA-MM-DD
+resultado = obtener_fecha_YYYY_MM_DD(fecha)
+
+# Imprime el resultado
+print("Resultado:", resultado)
