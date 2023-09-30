@@ -1,14 +1,25 @@
-# Número de filas del patrón
-num_filas = 5
+# Inicializa listas para almacenar números pares e impares
+numeros_pares = []
+numeros_impares = []
 
-# Parte superior del patrón
-for i in range(num_filas):
-    for j in range(i + 1):
-        print("*", end=" ")
-    print()
+# Bucle para ingresar números
+while True:
+    respuesta = input("¿Desea ingresar un número? (SI/NO): ").strip().upper()
+    
+    if respuesta == "SI":
+        numero = int(input("Ingrese el número: "))
+        if numero % 2 == 0:
+            numeros_pares.append(numero)
+        else:
+            numeros_impares.append(numero)
+    elif respuesta == "NO":
+        break
+    else:
+        print("Respuesta no válida. Por favor, ingrese 'SI' o 'NO'.")
 
-# Parte inferior del patrón
-for i in range(num_filas - 1, 0, -1):
-    for j in range(i):
-        print("*", end=" ")
-    print()
+# Imprime los números ingresados
+print("Números ingresados:", numeros_pares + numeros_impares)
+
+# Imprime la cantidad de números pares e impares
+print("Cantidad de números pares:", len(numeros_pares))
+print("Cantidad de números impares:", len(numeros_impares))

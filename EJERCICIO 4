@@ -1,0 +1,22 @@
+# Inicializa una lista para almacenar los datos de los alumnos
+lista_alumnos = []
+
+# Solicita al usuario la cantidad de alumnos
+n = int(input("Ingrese el número de alumnos: "))
+
+# Bucle para ingresar los datos de los alumnos
+for i in range(n):
+    nombre = input(f"Ingrese el nombre del alumno {i + 1}: ")
+    calificaciones = []
+    for j in range(3):
+        calificacion = float(input(f"Ingrese la calificación {j + 1} para {nombre}: "))
+        calificaciones.append(calificacion)
+    
+    # Crea un diccionario para representar al alumno y agrega a la lista de alumnos
+    alumno = {"Alumno": nombre, "Notas": calificaciones}
+    lista_alumnos.append(alumno)
+
+# Imprime el listado completo de alumnos
+print("\nListado completo de alumnos:")
+for alumno in lista_alumnos:
+    print(alumno)
