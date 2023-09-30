@@ -1,6 +1,5 @@
 # Número de filas del patrón
 num_filas = 5
-
 # Parte superior del patrón
 for i in range(num_filas):
     for j in range(i + 1):
