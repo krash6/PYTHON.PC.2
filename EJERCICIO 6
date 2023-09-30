@@ -1,0 +1,10 @@
+# Inicializa los dos primeros números de la serie de Fibonacci
+a, b = 0, 1
+
+# Imprime el primer número de la serie (0)
+print(a)
+
+# Genera la serie de Fibonacci hasta que el valor actual sea menor o igual a 50
+while b <= 50:
+    print(b)
+    a, b = b, a + b
