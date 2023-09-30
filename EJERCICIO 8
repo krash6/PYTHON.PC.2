@@ -1,0 +1,30 @@
+def calcular_factorial(numero):
+    if numero < 0:
+        return "No se puede calcular el factorial de un número negativo."
+    elif numero == 0:
+        return 1
+    else:
+        factorial = 1
+        for i in range(1, numero + 1):
+            factorial *= i
+        return factorial
+
+def main():
+    while True:
+        try:
+            numero = int(input("Ingrese un número para calcular su factorial: "))
+            resultado = calcular_factorial(numero)
+            
+            if isinstance(resultado, int):
+                print(f"El factorial de {numero} es {resultado}.")
+            else:
+                print(resultado)
+            
+            respuesta = input("¿Desea ingresar otro número? (SI/NO): ").strip().upper()
+            if respuesta != "SI":
+                break
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+if __name__ == "__main__":
+    main()
