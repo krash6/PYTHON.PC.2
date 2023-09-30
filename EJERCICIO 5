@@ -1,0 +1,25 @@
+def contar_digitos(numero, digito):
+    # Inicializa una variable para contar la cantidad de veces que aparece el dígito
+    cantidad = 0
+    
+    # Convierte el número en una cadena de texto para analizar cada dígito
+    numero_str = str(numero)
+    
+    # Recorre cada dígito en la cadena y cuenta las ocurrencias del dígito deseado
+    for d in numero_str:
+        if d == str(digito):
+            cantidad += 1
+    
+    return cantidad
+
+# Solicita al usuario ingresar un número entero y un dígito
+numero = int(input("Ingrese un número entero: "))
+digito = int(input("Ingrese un dígito para contar: "))
+
+# Llama a la función contar_digitos para obtener la cantidad de veces que aparece el dígito
+cantidad = contar_digitos(numero, digito)
+
+# Imprime el resultado
+print(f"Cantidad de veces {digito} en el número: {cantidad}")
+
+
