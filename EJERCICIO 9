@@ -1,0 +1,15 @@
+def omitir_vocales(cadena):
+    resultado = ""
+    for caracter in cadena:
+        if caracter.lower() not in "aeiou":
+            resultado += caracter
+    return resultado
+
+# Solicita al usuario ingresar una cadena de texto
+entrada = input("Ingrese una cadena de texto: ")
+
+# Llama a la función omitir_vocales para eliminar las vocales
+resultado = omitir_vocales(entrada)
+
+# Imprime el resultado
+print("Resultado:", resultado)
